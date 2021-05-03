@@ -104,10 +104,11 @@
                   name="amount"
                   type="number"
                   value=""
-                  min=".01"
+                  min="-100000.01"
+                  max="-.01"
                   step=".01"
-                  pattern="[1-0]"
-                  title="Amount of purchase must be more than zero"
+                  pattern="[1-9]"
+                  title="Amount of purchase must be a preceeded by a minus sign since this is a purchase against your balance"
                   required
                 />
                 <input type="submit"value="Submit Transaction" class="button" required></input>
