@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+    </style>
+    <title>Bank App</title>
+  </head>
+  <body class="container white font">
+    <div class="background">
+      <div>
+        <div>
+          <div class="logo middle">
+              <img src="./Bank_Logo.png" height="60px" alt="logo of bank">
+              <h2>Second Bank Of America</h2>
+            </div>
+              <h3 class="text-center">Create New User</h3>
+        </div>
+        <div class="middle">
+          <div class="cell text-center">
+            <form id="createNewUser" action="" method="POST" class="inline">
+              <label for="user">Username</label>
+              <input
+                id="user"
+                name="user"
+                type="text"
+                minlength="8"
+                pattern="[A-Za-z0-9]+{8,25}"
+                title="Username should be at least 8 characters long with no special characters. e.g. !, @, #"
+                required
+              />
+              <label for="currency">Currency</label>
+              <select
+                id="currency"
+                name="currency"
+                type="text"
+                value="$"
+                pattern="[$,€]"
+                title="Please select a currency type"
+                required
+              >
+                <option value=""></option>
+                <option value="$">$</option>
+                <option value="€">€</option>
+              </select>
+              <br>
+              <label for="description">Account Description</label>
+              <input id="description" name="description" type="text" title="Please describe this account" required/>
+              <label for="balance">Current Balance</label>
+              <input
+                id="balance"
+                name="balance"
+                type="number"
+                value=""
+                min="50"
+                step=".01"
+                pattern="[1-0]"
+                title="Minimum amount entered for balance must be $50"
+                required
+              />
+
+              <input type="submit" value="Create New User" class="button">
+            </form>
+          </div>
+        </div>
+      </div>
+      <br />
+
+      <div class="middle">
+        <div id="transactions">
+          <section class="middle">
+            <h3>Submit Transaction</h3>
+          </section>
+          <section class="middle text-center">
+            <div class="cell container ">
+              <form id="createNewTransaction" methods="POST" action="">
+                <label for="user">Username</label>
+                <input
+                  id="user"
+                  name="user"
+                  type="text"
+                  minlength="8"
+                  pattern="[A-Za-z0-9]+{8,25}"
+                  title="Username should be at least 8 characters long with no special characters. e.g. !, @, #"
+                  required
+                />
+                <label for="Date">Date</label>
+                <input type="datetime-local" value="" id="date" name="date" title="Please enter a validate date and time" required/>
+                <label for="object">Item Purchased</label>
+                <input
+                  id="object"
+                  name="object"
+                  type="text"
+                  maxlength="20"
+                  title="Please give a description of the item purchased"
+                  required
+                />
+                <label for="amount">Amount Of Purchase</label>
+                <input
+                  id="amount"
+                  name="amount"
+                  type="number"
+                  value=""
+                  min=".01"
+                  step=".01"
+                  pattern="[1-0]"
+                  title="Amount of purchase must be more than zero"
+                  required
+                />
+                <input type="submit"value="Submit Transaction" class="button" required></input>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+  <script src="./main.js"></script>
+  <script>bindUserSubmit()</script>
+  <script>bindTransactionSubmit()</script>
+</html>
